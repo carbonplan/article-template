@@ -46,7 +46,10 @@ const Article = ({ children, meta }) => {
       <BackArrow/>
       <Grid columns={[1, '650px 1fr', '650px 1fr']} gap={['100px']}>
         <Box sx={{ mt: '-65px' }}>
-          {children.filter((child) => !meta.full.includes(child.props.mdxType))}
+          {meta.full 
+            ? children.filter((child) => !meta.full.includes(child.props.mdxType))
+            : children
+          }
         </Box>
         <Box sx={{ display: ['none', 'none', 'initial']}}>
           <Box sx={{ mt: '55px', maxWidth: '250px' }}>
@@ -73,8 +76,12 @@ const Article = ({ children, meta }) => {
       </Grid>
     </Container>
     <Container sx={{ px: [4] }}>
-      {children.filter((child) => meta.full.includes(child.props.mdxType))}
+      {meta.full
+        ? children.filter((child) => meta.full.includes(child.props.mdxType))
+        : null
+      }
     </Container>
+    <Box sx={{ mb: [6] }}/>
   </Layout>
 }
 
