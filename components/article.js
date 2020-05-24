@@ -1,11 +1,11 @@
 import { Box, Text, Grid, Container } from 'theme-ui'
 import Layout from './layout'
-import Contents from '../contents'
 import BackArrow from './article/back-arrow'
+import contents from '../contents'
 
 const Article = ({ children, meta }) => {
 
-  const info = Contents.articles.filter(({id}) => id === meta.id)[0]
+  const info = contents[meta.id]
 
   return <Layout shareCard={meta.id} shareDescription={meta.summary} shareTitle={info.title}>
     <Box sx={{ 
@@ -26,12 +26,14 @@ const Article = ({ children, meta }) => {
         color: 'background'
       }}>
         <Container sx={{ px: [4] }}>
-          <Grid columns={[1, '15% 35% 50%', '15% 35% 50%']} gap={['0px']}>
+          <Grid columns={[1, '15% 40% 50%', '15% 40% 50%']} gap={['0px']}>
             <Text sx={{ fontFamily: 'monospace', letterSpacing: 'mono', textTransform: 'uppercase' }}>
               Article({ info.number })
             </Text>
             <Text sx={{ fontFamily: 'monospace', letterSpacing: 'mono', textTransform: 'uppercase' }}>
-              by { info.authors }
+              by { info.authors.map((author) => <Text key={author} sx={{ 
+                display: 'inline-block', 
+                mr: [2] }}>{author}</Text>) }
             </Text>
             <Text sx={{ fontFamily: 'monospace', letterSpacing: 'mono', textTransform: 'uppercase' }}>
               { info.date }
@@ -40,10 +42,12 @@ const Article = ({ children, meta }) => {
         </Container>
       </Box>
     </Box>
-    <Container sx={{ px: [4], mb: [5] }}>
+    <Container sx={{ px: [4], mb: [3] }}>
       <BackArrow/>
       <Grid columns={[1, '650px 1fr', '650px 1fr']} gap={['100px']}>
-        <Box sx={{ mt: '-65px' }}>{children}</Box>
+        <Box sx={{ mt: '-65px' }}>
+          {children.filter((child) => !meta.full.includes(child.props.mdxType))}
+        </Box>
         <Box sx={{ display: ['none', 'none', 'initial']}}>
           <Box sx={{ mt: '55px', maxWidth: '250px' }}>
             <Text sx={{ fontFamily: 'heading', letterSpacing: 'wide', mb: [3] }}>
@@ -67,6 +71,9 @@ const Article = ({ children, meta }) => {
           ))}
         </Box>
       </Grid>
+    </Container>
+    <Container sx={{ px: [4] }}>
+      {children.filter((child) => meta.full.includes(child.props.mdxType))}
     </Container>
   </Layout>
 }

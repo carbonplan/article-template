@@ -3,8 +3,10 @@ import Component from './components/component'
 
 export const meta = {
   id: 'article-title',
-  summary: 'Article summary',
-  quotes: []
+  title: 'Article title',
+  summary: 'Summary of article.',
+  quotes: [],
+  full: ['Calculator']
 }
 
 # Article title
