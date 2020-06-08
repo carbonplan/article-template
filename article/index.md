@@ -5,7 +5,7 @@ export const meta = {
   id: 'article-title',
   title: 'Article title',
   summary: 'Summary of article.',
-  quotes: []
+  quotes: [],
 }
 
 # Article title
