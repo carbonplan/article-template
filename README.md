@@ -1,9 +1,8 @@
 # carbonplan / article template
 
-[![Node.js CI](https://github.com/carbonplan/article-template/workflows/Node.js%20CI/badge.svg)](https://github.com/carbonplan/article-template/actions)
+[![Build](https://github.com/carbonplan/article-template/workflows/Build/badge.svg)](https://github.com/carbonplan/article-template/actions)
 [![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=carbonplan/article-template)](https://dependabot.com)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/carbonplan/article-template/blob/master/LICENSE)
-
 
 This repository contains a template for developing an article to be included on our research site at [carbonplan.org/research](https://carbonplan.org/research).
 
