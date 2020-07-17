@@ -1,6 +1,6 @@
 # carbonplan / article template
 
-[![Build](https://github.com/carbonplan/article-template/workflows/Build/badge.svg)](https://github.com/carbonplan/article-template/actions)
+[![Build](https://github.com/carbonplan/article-template/workflows/CI/badge.svg)](https://github.com/carbonplan/article-template/actions)
 [![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=carbonplan/article-template)](https://dependabot.com)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/carbonplan/article-template/blob/master/LICENSE)
 
