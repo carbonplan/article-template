@@ -1,5 +1,8 @@
 # carbonplan / article template
 
+[![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=carbonplan/article-template)](https://dependabot.com) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+
 This repository contains a template for developing an article to be included on our research site at [carbonplan.org/research](https://carbonplan.org/research).
 
 This is basically a mini [Next.js](https://nextjs.org/) app that wraps your article content with our layout for development purposes.
