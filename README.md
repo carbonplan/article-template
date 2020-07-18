@@ -1,8 +1,22 @@
+<img
+  src='https://carbonplan-assets.s3.amazonaws.com/monogram/dark-small.png'
+  height='48'
+/>
+
 # carbonplan / article template
 
-[![Build](https://github.com/carbonplan/article-template/workflows/CI/badge.svg)](https://github.com/carbonplan/article-template/actions)
-[![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=carbonplan/article-template)](https://dependabot.com)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/carbonplan/article-template/blob/master/LICENSE)
+**template repository for carbonplan articles**
+
+[![GitHub][github-badge]][github]
+![Build Status][]
+![dependabot][]
+![MIT License][]
+
+[github]: https://github.com/carbonplan/article-template
+[github-badge]: https://flat.badgen.net/badge/-/github?icon=github&label
+[build status]: https://flat.badgen.net/github/checks/carbonplan/article-template
+[dependabot]: https://flat.badgen.net/dependabot/carbonplan/article-template?icon=dependabot
+[mit license]: https://flat.badgen.net/badge/license/MIT/blue
 
 This repository contains a template for developing an article to be included on our research site at [carbonplan.org/research](https://carbonplan.org/research).
 
