@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/carbonplan/article-template#readme",
   "dependencies": {
-    "@mdx-js/loader": "^1.6.16",
+    "@mdx-js/loader": "^1.6.17",
     "@next/mdx": "^9.5.3",
     "@theme-ui/color": "^0.3.1",
     "next": "^9.5.3",
