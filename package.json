@@ -6,7 +6,10 @@
   "scripts": {
     "dev": "next -p 5001",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "format": "npm run format-js && npm run format-md",
+    "format-js": "prettier --write '*.js' '{components,pages,article}/**/*.js'",
+    "format-md": "prettier --write README.md 'article/**/*.md' --parser mdx"
   },
   "repository": {
     "type": "git",
@@ -19,6 +22,8 @@
   },
   "homepage": "https://github.com/carbonplan/article-template#readme",
   "dependencies": {
+    "@carbonplan/components": "^1.0.0",
+    "@carbonplan/theme": "^1.1.0",
     "@mdx-js/loader": "^1.6.1",
     "@next/mdx": "^9.4.1",
     "@theme-ui/color": "^0.3.1",
@@ -27,5 +32,8 @@
     "react-dom": "^16.13.1",
     "rehype-slug": "^3.0.0",
     "theme-ui": "^0.3.1"
+  },
+  "devDependencies": {
+    "prettier": "2.1.2"
   }
 }
