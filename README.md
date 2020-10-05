@@ -1,4 +1,20 @@
+<img
+  src='https://carbonplan-assets.s3.amazonaws.com/monogram/dark-small.png'
+  height='48'
+/>
+
 # carbonplan / article template
+
+**template repository for carbonplan articles**
+
+[![GitHub][github-badge]][github]
+![Build Status][]
+![MIT License][]
+
+[github]: https://github.com/carbonplan/article-template
+[github-badge]: https://flat.badgen.net/badge/-/github?icon=github&label
+[build status]: https://flat.badgen.net/github/checks/carbonplan/article-template
+[mit license]: https://flat.badgen.net/badge/license/MIT/blue
 
 This repository contains a template for developing an article to be included on our research site at [carbonplan.org/research](https://carbonplan.org/research).
 

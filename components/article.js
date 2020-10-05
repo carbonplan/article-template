@@ -15,7 +15,7 @@ const Article = ({ children, meta }) => {
       <Box
         sx={{
           backgroundColor: info.color,
-          height: ['100px', '100px', info.background ? '275px' : '100px'],
+          height: ['auto', 'auto', info.background ? '275px' : '100px'],
           position: 'relative',
           backgroundImage: [
             'none',
@@ -26,23 +26,24 @@ const Article = ({ children, meta }) => {
           ],
           backgroundSize: 'cover',
           backgroundPosition: '50% 70%',
+          py: [3, 3, 0],
         }}
       >
         <Box
           sx={{
-            position: 'absolute',
+            position: ['initial', 'initial', 'absolute'],
             bottom: 0,
-            pb: [3],
+            pb: [0, 0, 3],
             width: '100%',
-            color: 'background',
+            color: ['#1b1e23', '#1b1e23', info.invert ? '#ebebec' : '#1b1e23'],
           }}
         >
           <Container sx={{ px: [4] }}>
-            <Grid columns={[1, '15% 40% 50%', '15% 40% 50%']} gap={['0px']}>
+            <Grid columns={[1, '15% 35% 50%', '15% 35% 50%']} gap={['0px']}>
               <Text
                 sx={{
                   fontFamily: 'monospace',
-                  letterSpacing: 'mono',
+                  letterSpacing: 'monospace',
                   textTransform: 'uppercase',
                 }}
               >
@@ -51,12 +52,12 @@ const Article = ({ children, meta }) => {
               <Text
                 sx={{
                   fontFamily: 'monospace',
-                  letterSpacing: 'mono',
+                  letterSpacing: 'monospace',
                   textTransform: 'uppercase',
                 }}
               >
                 by{' '}
-                {info.authors.map((author) => (
+                {info.authors.map((author, ix) => (
                   <Text
                     key={author}
                     sx={{
@@ -64,14 +65,14 @@ const Article = ({ children, meta }) => {
                       mr: [2],
                     }}
                   >
-                    {author}
+                    {author} {ix < info.authors.length - 1 ? '+' : ''}
                   </Text>
                 ))}
               </Text>
               <Text
                 sx={{
                   fontFamily: 'monospace',
-                  letterSpacing: 'mono',
+                  letterSpacing: 'monospace',
                   textTransform: 'uppercase',
                 }}
               >
@@ -81,16 +82,10 @@ const Article = ({ children, meta }) => {
           </Container>
         </Box>
       </Box>
-      <Container sx={{ px: [4], mb: [3] }}>
+      <Container sx={{ px: [4], mb: [5] }}>
         <BackArrow />
-        <Grid columns={[1, '650px 1fr', '650px 1fr']} gap={['100px']}>
-          <Box sx={{ mt: '-65px' }}>
-            {meta.full
-              ? children.filter(
-                  (child) => !meta.full.includes(child.props.mdxType)
-                )
-              : children}
-          </Box>
+        <Grid columns={[1, 1, '650px 1fr']} gap={['100px']}>
+          <Box sx={{ mt: '-65px' }}>{children}</Box>
           <Box sx={{ display: ['none', 'none', 'initial'] }}>
             <Box sx={{ mt: '55px', maxWidth: '250px' }}>
               <Text
@@ -124,12 +119,6 @@ const Article = ({ children, meta }) => {
           </Box>
         </Grid>
       </Container>
-      <Container sx={{ px: [4] }}>
-        {meta.full
-          ? children.filter((child) => meta.full.includes(child.props.mdxType))
-          : null}
-      </Container>
-      <Box sx={{ mb: [6] }} />
     </Layout>
   )
 }
