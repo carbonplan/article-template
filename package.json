@@ -32,7 +32,7 @@
     "next": "^10.0.2",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
-    "rehype-slug": "^3.0.0",
+    "rehype-slug": "^4.0.1",
     "theme-ui": "^0.3.3"
   },
   "devDependencies": {
