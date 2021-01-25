@@ -28,7 +28,7 @@
     "@mdx-js/loader": "^1.6.22",
     "@next/mdx": "^10.0.5",
     "@theme-ui/color": "^0.3.5",
-    "@theme-ui/css": "^0.6.0-alpha.4",
+    "@theme-ui/css": "^0.6.0-alpha.6",
     "next": "^10.0.5",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
