@@ -1,3 +1,3 @@
-import Index from '../article/index.md'
+import Index from '../tool/index.js'
 
 export default Index
