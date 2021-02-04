@@ -1,6 +1,6 @@
 import { Box, Styled, Link } from 'theme-ui'
 import { default as NextLink } from 'next/link'
-import Tool from '../../components/tool'
+import Tool from '../components/tool'
 
 const Index = () => {
   const meta = {

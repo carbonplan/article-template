@@ -1,7 +1,6 @@
 import { Box, Text, Grid, Container, Styled } from 'theme-ui'
 import { Layout } from '@carbonplan/components'
 import BackArrow from './back-arrow'
-import contents from '../contents'
 
 const prefix = 'https://images.carbonplan.org'
 
