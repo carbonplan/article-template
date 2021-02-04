@@ -1,6 +1,13 @@
-/** @jsx jsx */
-import { jsx, Box, Text } from 'theme-ui'
+import { Box, Text } from 'theme-ui'
 import { useState } from 'react'
+
+const Wrapper = ({ url, children }) => {
+  if (url) {
+    return <a href={url}>{children}</a>
+  } else {
+    return <span>{children}</span>
+  }
+}
 
 const Reference = ({ color, data }) => {
   const [selected, setSelected] = useState(false)
@@ -19,14 +26,15 @@ const Reference = ({ color, data }) => {
   }
 
   return (
-    <>
-      <sup
+    <Box as='span' sx={{ userSelect: 'none' }}>
+      <Text
+        as='span'
         onMouseOver={toggleOn}
         onMouseOut={toggleOff}
         onClick={toggle}
         sx={{
           pr: [1],
-          fontSize: [1],
+          fontSize: ['17px'],
           cursor: 'pointer',
           color: [
             selectedMobile ? color : 'text',
@@ -36,10 +44,11 @@ const Reference = ({ color, data }) => {
           transition: 'color 0.2s ease-in-out',
         }}
       >
-        {data.number}
-      </sup>
-      <a href={data.url} target='_blank'>
-        <span
+        <sup>{data.number}</sup>
+      </Text>
+      <Wrapper url={data.url}>
+        <Text
+          as='span'
           onMouseOver={toggleOn}
           onMouseOut={toggleOff}
           sx={{
@@ -48,7 +57,7 @@ const Reference = ({ color, data }) => {
             mt: [3, 3, '-250px'],
             mb: [3, 3, 0],
             top: ['0px', '0px', `${250 + data.offset}px`],
-            left: ['0px', '0px', '350px'],
+            left: ['0px', '0px', '344px'],
             maxWidth: '250px',
             cursor: 'pointer',
             display: [
@@ -58,34 +67,48 @@ const Reference = ({ color, data }) => {
             ],
           }}
         >
-          <span
+          <Text
+            as='span'
             sx={{
               fontFamily: 'body',
               fontSize: [1],
               lineHeight: 1.25,
+              letterSpacing: '0.0125em',
               color: color,
               opacity: [1, 1, selected ? 1 : 0.5],
               display: 'inline-block',
               transition: 'opacity 0.2s ease-in-out',
             }}
           >
-            <span
+            <Text
+              as='span'
               sx={{
-                ml: ['-18px'],
+                ml: ['-12px'],
+                lineHeight: 1.25,
+                letterSpacing: '0.0125em',
                 display: ['none', 'none', 'initial'],
               }}
             >
               {data.number}
-            </span>
-            <span sx={{ ml: [0, 0, '7px'] }}>
-              {' '}
+            </Text>
+            <Text
+              as='span'
+              sx={{
+                ml: [0, 0, '7px'],
+                mt: [0, 0, '-17px'],
+                display: ['initial', 'intial', 'block'],
+                lineHeight: 1.25,
+                letterSpacing: '0.0125em',
+              }}
+            >
               {data.authors} {data.year ? `(${data.year})` : ''} {data.title}{' '}
-              <i>{data.journal}</i>
-            </span>
-          </span>
-        </span>
-      </a>
-    </>
+              <i>{data.journal}</i>{' '}
+              {data.editors ? `edited by ${data.editors}` : ''}
+            </Text>
+          </Text>
+        </Text>
+      </Wrapper>
+    </Box>
   )
 }
 

@@ -4,6 +4,8 @@ import Component from './components/component'
 export const meta = {
   id: 'article-title',
   title: 'Article title',
+  authors: ['Author 1', 'Author 2'],
+  color: 'blue',
   summary: 'Summary of article.',
   quotes: [],
 }

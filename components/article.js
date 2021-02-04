@@ -1,29 +1,31 @@
 import { Box, Text, Grid, Container } from 'theme-ui'
-import Layout from './layout'
-import BackArrow from './article/back-arrow'
-import contents from '../contents'
+import { Layout } from '@carbonplan/components'
+import BackArrow from './back-arrow'
+
+const prefix = 'https://images.carbonplan.org'
 
 const Article = ({ children, meta }) => {
-  const info = contents[meta.id]
-
   return (
     <Layout
-      shareCard={meta.id}
-      shareDescription={meta.summary}
-      shareTitle={info.title}
+      card={`${prefix}/social/${meta.card}.png`}
+      description={meta.summary}
+      title={meta.title.toLowerCase() + ' / research / carbonplan'}
+      links={'local'}
+      metadata={'scroll'}
     >
       <Box
         sx={{
-          backgroundColor: info.color,
-          height: ['auto', 'auto', info.background ? '275px' : '100px'],
-          position: 'relative',
+          backgroundColor: meta.color,
+          height: ['auto', 'auto', meta.background ? '275px' : '100px'],
+          position: ['relative', 'relative', 'absolute'],
           backgroundImage: [
             'none',
             'none',
-            info.background
-              ? `url(https://carbonplan-assets.s3.amazonaws.com/images/${info.background})`
-              : 'none',
+            meta.background ? `url(${prefix}/${meta.background}.png)` : 'none',
           ],
+          width: ['calc(100vw)'],
+          left: [0],
+          ml: [-3, -4, 0],
           backgroundSize: 'cover',
           backgroundPosition: '50% 70%',
           py: [3, 3, 0],
@@ -35,87 +37,79 @@ const Article = ({ children, meta }) => {
             bottom: 0,
             pb: [0, 0, 3],
             width: '100%',
-            color: ['#1b1e23', '#1b1e23', info.invert ? '#ebebec' : '#1b1e23'],
+            color: ['#1b1e23', '#1b1e23', meta.invert ? '#1b1e23' : '#ebebec'],
           }}
         >
-          <Container sx={{ px: [4] }}>
-            <Grid columns={[1, '15% 35% 50%', '15% 35% 50%']} gap={['0px']}>
+          <Container sx={{ px: [3, 4, 4] }}>
+            <Grid columns={[1, 1, '165px 585px 1fr']} gap={['0px']}>
               <Text
                 sx={{
-                  fontFamily: 'monospace',
-                  letterSpacing: 'monospace',
+                  fontFamily: 'mono',
+                  letterSpacing: 'mono',
                   textTransform: 'uppercase',
+                  fontSize: [2],
                 }}
               >
-                Article({info.number})
+                Article({meta.number})
               </Text>
               <Text
                 sx={{
-                  fontFamily: 'monospace',
-                  letterSpacing: 'monospace',
+                  fontFamily: 'mono',
+                  letterSpacing: 'mono',
                   textTransform: 'uppercase',
+                  fontSize: [2],
                 }}
               >
                 by{' '}
-                {info.authors.map((author, ix) => (
+                {meta.authors.map((author, ix) => (
                   <Text
                     key={author}
                     sx={{
                       display: 'inline-block',
                       mr: [2],
+                      fontFamily: 'mono',
+                      letterSpacing: 'mono',
+                      fontSize: [2],
                     }}
                   >
-                    {author} {ix < info.authors.length - 1 ? '+' : ''}
+                    {author.replace(/ /g, '\u00a0')}{' '}
+                    {ix < meta.authors.length - 1 ? '+' : ''}
                   </Text>
                 ))}
               </Text>
               <Text
                 sx={{
-                  fontFamily: 'monospace',
-                  letterSpacing: 'monospace',
+                  fontFamily: 'mono',
+                  letterSpacing: 'mono',
                   textTransform: 'uppercase',
+                  fontSize: [2],
                 }}
               >
-                {info.date}
+                {meta.date}
               </Text>
             </Grid>
           </Container>
         </Box>
       </Box>
-      <Container sx={{ px: [4], mb: [5] }}>
+      <Container
+        sx={{ pt: [0, 0, meta.background ? '275px' : '100px'], mb: [5] }}
+      >
         <BackArrow />
         <Grid columns={[1, 1, '650px 1fr']} gap={['100px']}>
           <Box sx={{ mt: '-65px' }}>{children}</Box>
           <Box sx={{ display: ['none', 'none', 'initial'] }}>
             <Box sx={{ mt: '55px', maxWidth: '250px' }}>
               <Text
-                sx={{ fontFamily: 'heading', letterSpacing: 'wide', mb: [3] }}
+                sx={{
+                  fontFamily: 'heading',
+                  letterSpacing: 'smallcaps',
+                  mb: [3],
+                }}
               >
                 / QUICK LOOK
               </Text>
-              <Text sx={{ color: info.color }}>{meta.summary}</Text>
+              <Text sx={{ color: meta.color }}>{meta.summary}</Text>
             </Box>
-            {meta.quotes.map((quote) => (
-              <Box
-                key={quote.position}
-                sx={{
-                  position: 'absolute',
-                  top: quote.position,
-                  maxWidth: '250px',
-                }}
-              >
-                <Text
-                  sx={{
-                    fontFamily: 'heading',
-                    fontSize: [5],
-                    lineHeight: 'heading',
-                    color: info.color,
-                  }}
-                >
-                  {quote.text}
-                </Text>
-              </Box>
-            ))}
           </Box>
         </Grid>
       </Container>
