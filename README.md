@@ -8,13 +8,14 @@
 **template repository for carbonplan articles**
 
 [![GitHub][github-badge]][github]
-![Build Status][]
+[![Build Status]][actions]
 ![MIT License][]
 
 [github]: https://github.com/carbonplan/article-template
-[github-badge]: https://flat.badgen.net/badge/-/github?icon=github&label
-[build status]: https://flat.badgen.net/github/checks/carbonplan/article-template
-[mit license]: https://flat.badgen.net/badge/license/MIT/blue
+[github-badge]: https://badgen.net/badge/-/github?icon=github&label
+[build status]: https://github.com/carbonplan/article-template/actions/workflows/main.yml/badge.svg
+[actions]: https://github.com/carbonplan/article-template/actions/workflows/main.yaml
+[mit license]: https://badgen.net/badge/license/MIT/blue
 
 This repository contains a template for developing an article to be included on our research site at [carbonplan.org/research](https://carbonplan.org/research).
 
