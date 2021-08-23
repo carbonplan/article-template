@@ -2,12 +2,13 @@ import Article from '../components/article'
 import Component from './components/component'
 
 export const meta = {
-  id: 'article-title',
-  title: 'Article title',
-  authors: ['Author 1', 'Author 2'],
-  color: 'blue',
-  summary: 'Summary of article.',
-  quotes: [],
+id: 'article-title',
+title: 'Article title',
+authors: ['Author 1', 'Author 2'],
+color: 'blue',
+summary: 'Summary of article.',
+date: '2021-08-01',
+quotes: [],
 }
 
 # Article title
