@@ -7,6 +7,7 @@ export const meta = {
   authors: ['Author 1', 'Author 2'],
   color: 'blue',
   summary: 'Summary of article.',
+  date: '2021-08-01',
   quotes: [],
 }
 
