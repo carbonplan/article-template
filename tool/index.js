@@ -1,6 +1,4 @@
-import { Box, Styled, Link } from 'theme-ui'
-import { default as NextLink } from 'next/link'
-import Tool from '../components/tool'
+import { Tool } from '@carbonplan/layouts'
 
 const Index = () => {
   const meta = {
@@ -10,16 +8,8 @@ const Index = () => {
     summary: 'Summary of tool.',
   }
 
-  const title = <Styled.h1>{meta.title}</Styled.h1>
-
-  const description = (
-    <Box sx={{ maxWidth: '700px', mb: [0, 0, 4] }}>
-      <Styled.p>Description of the tool.</Styled.p>
-    </Box>
-  )
-
   return (
-    <Tool meta={meta} title={title} description={description}>
+    <Tool meta={meta} description='Description of the tool'>
       This is a tool.
     </Tool>
   )
