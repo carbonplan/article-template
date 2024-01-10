@@ -1,21 +1,18 @@
-<img
-  src='https://carbonplan-assets.s3.amazonaws.com/monogram/dark-small.png'
-  height='48'
-/>
+<p align="left" >
+<a href='https://carbonplan.org'>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://carbonplan-assets.s3.amazonaws.com/monogram/light-small.png">
+  <img alt="CarbonPlan monogram." height="48" src="https://carbonplan-assets.s3.amazonaws.com/monogram/dark-small.png">
+</picture>
+</a>
+</p>
 
 # carbonplan / article template
 
 **template repository for carbonplan articles**
 
-[![GitHub][github-badge]][github]
-[![Build Status]][actions]
-![MIT License][]
-
-[github]: https://github.com/carbonplan/article-template
-[github-badge]: https://badgen.net/badge/-/github?icon=github&label
-[build status]: https://github.com/carbonplan/article-template/actions/workflows/main.yml/badge.svg
-[actions]: https://github.com/carbonplan/article-template/actions/workflows/main.yaml
-[mit license]: https://badgen.net/badge/license/MIT/blue
+[![CI](https://github.com/carbonplan/article-template/actions/workflows/main.yml/badge.svg)](https://github.com/carbonplan/article-template/actions/workflows/main.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 This repository contains a template for developing an article to be included on our research site at [carbonplan.org/research](https://carbonplan.org/research).
 
@@ -43,8 +40,8 @@ and then visit `http://localhost:5001` in your browser.
 
 ## license
 
-All the code in this repository is [MIT](https://choosealicense.com/licenses/mit/) licensed, but we request that you please provide attribution if reusing any of our digital content (graphics, logo, articles, etc.).
+All the code in this repository is [MIT](https://choosealicense.com/licenses/mit/)-licensed, but we request that you please provide attribution if reusing any of our digital content (graphics, logo, articles, etc.).
 
 ## about us
 
-CarbonPlan is a non-profit organization that uses data and science for climate action. We aim to improve the transparency and scientific integrity of climate solutions with open data and tools. Find out more at [carbonplan.org](https://carbonplan.org/) or get in touch by [opening an issue](https://github.com/carbonplan/article-template/issues/new) or [sending us an email](mailto:hello@carbonplan.org).
+CarbonPlan is a nonprofit organization that uses data and science for climate action. We aim to improve the transparency and scientific integrity of climate solutions with open data and tools. Find out more at [carbonplan.org](https://carbonplan.org/) or get in touch by [opening an issue](https://github.com/carbonplan/article-template/issues/new) or [sending us an email](mailto:hello@carbonplan.org).
