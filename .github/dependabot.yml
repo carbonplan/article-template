@@ -5,3 +5,16 @@ updates:
     schedule:
       # Check for updates to GitHub Actions every weekday
       interval: 'monthly'
+    groups:
+      gh-actions:
+        patterns:
+          - '*'
+  - package-ecosystem: 'npm'
+    directory: '/'
+    schedule:
+      interval: 'monthly'
+
+    groups:
+      npm-dependencies:
+        patterns:
+          - '*'
