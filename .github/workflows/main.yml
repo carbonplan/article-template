@@ -8,8 +8,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [14.x, 16.x]
-
+        node-version: [18.x, 22.x] # https://nodejs.org/en/about/previous-releases
     steps:
       - uses: actions/checkout@v4
       - name: Use Node.js ${{ matrix.node-version }}
