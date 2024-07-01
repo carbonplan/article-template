@@ -22,20 +22,20 @@
   },
   "homepage": "https://github.com/carbonplan/article-template#readme",
   "dependencies": {
-    "@carbonplan/components": "^12.0.0",
-    "@carbonplan/layouts": "^3.0.0",
-    "@carbonplan/theme": "^8.0.0",
-    "@mdx-js/loader": "^2.1.5",
-    "@mdx-js/react": "^2.1.5",
-    "@next/mdx": "^12.3.1",
-    "@theme-ui/color": "^0.15.3",
-    "next": "^12.0.5",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "rehype-slug": "^4.0.1",
-    "theme-ui": "^0.15.3"
+    "@carbonplan/components": "^12.6.1",
+    "@carbonplan/layouts": "^4.1.0",
+    "@carbonplan/theme": "^8.1.0",
+    "@mdx-js/loader": "^3.0.1",
+    "@mdx-js/react": "^3.0.1",
+    "@next/mdx": "^14.2.4",
+    "@theme-ui/color": "^0.16.2",
+    "next": "^14.2.4",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "rehype-slug": "^6.0.0",
+    "theme-ui": "^0.16.2"
   },
   "devDependencies": {
-    "prettier": "2.3.2"
+    "prettier": "3.3.2"
   }
 }
